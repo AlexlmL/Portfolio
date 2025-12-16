@@ -1,0 +1,43 @@
+---
+const education = [
+    {
+        institution: 'Instituto Cultural Peruano Norteamericano (ICPNA)',
+        degree: 'English Studies',
+        period: '2017 – 2021',
+        details: [
+            'English level: B1',
+            'Complementary language education'
+        ]
+    },
+    {
+        institution: 'Universidad Peruana de Ciencias Aplicadas (UPC)',
+        degree: 'Software Engineering',
+        period: '2021 – Present',
+        details: [
+            'Ninth semester student',
+            'Top third of the class'
+        ]
+    }
+]
+
+const languages = [
+    { name: 'Spanish', level: 'Native' },
+    { name: 'English', level: 'B1' }
+]
+---
+<section id="education" class="container">
+    <h2>Education</h2>
+
+    {education.map(item => (
+            <article class="education-card">
+                <h3>{item.degree}</h3>
+                <p class="meta">
+                    {item.institution} · {item.period}
+                </p>
+
+                <ul>
+                    {item.details.map(d => <li>{d}</li>)}
+                </ul>
+            </article>
+    ))}
+</section>

@@ -1,0 +1,43 @@
+---
+const mainCertifications = [
+{
+    title: 'IBM Cybersecurity Analyst',
+    provider: 'IBM · Coursera',
+    hours: '25+ hours',
+    },
+{
+    title: 'Machine Learning on Google Cloud',
+    provider: 'Google Cloud · Coursera',
+    hours: '30+ hours',
+    },
+{
+    title: 'Extended Reality for Everybody',
+    provider: 'University of Michigan · Coursera',
+    hours: '20 hours',
+    },
+{
+    title: 'AWS Academy Cloud Foundations',
+    provider: 'Cibertec',
+    hours: '30+ hours',
+    },
+{
+    title: 'Data Analytics Power BI',
+    provider: 'Cibertec',
+    hours: '70+ hours',
+    }
+]
+---
+<section id="certifications" class="container">
+    <h2>Certifications</h2>
+
+    <h3>Main Certifications</h3>
+    <div class="cert-grid">
+        {mainCertifications.map(cert => (
+                <article class="cert-card highlight">
+                    <h4>{cert.title}</h4>
+                    <p class="meta">{cert.provider}</p>
+                    <p class="hours">{cert.hours}</p>
+                </article>
+        ))}
+    </div>
+</section>

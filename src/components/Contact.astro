@@ -1,0 +1,16 @@
+---
+const { site } = Astro.props
+---
+<section id="contact" class="container contact">
+    <h2>Contact</h2>
+    <p>
+        If you'd like to collaborate, discuss a project, or just connect, feel free to
+        reach out.
+    </p>
+    <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+    <p>Tel: {site.phone}</p>
+    <p>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+        <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+</section>

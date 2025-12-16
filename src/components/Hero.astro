@@ -1,0 +1,25 @@
+---
+const { site } = Astro.props
+---
+<section id="top" class="hero">
+    <div class="hero-content">
+        <img
+                src="/hero_photo.jpg"
+                alt="Profile photo"
+                class="avatar"
+        />
+
+        <h1>{site.name}</h1>
+        <p class="subtitle">{site.title}</p>
+
+        <p class="contact-info">
+            {site.phone} ·
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+
+        <div class="hero-actions">
+            <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </div>
+</section>

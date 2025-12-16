@@ -1,0 +1,39 @@
+---
+const experience = {
+    role: 'Frontend Web Intern',
+    company: 'NEONHOUSELED S.A.C',
+    period: 'Jun 2025 – Sep 2025',
+    modality: 'Remote Internship (Certified)',
+    tech: ['React', 'Laravel', 'MySQL'],
+    responsibilities: [
+        'Developed new frontend features for company websites and web applications',
+        'Maintained and improved existing pages and components',
+        'Proposed solutions to improve workflow efficiency and overall usability',
+        'Collaborated with backend developers and designers in an agile environment',
+        'Completed certified internship and received a recommendation letter'
+    ]
+}
+---
+<section id="experience" class="container">
+    <h2>Professional Experience</h2>
+
+    <article class="experience-card">
+        <header>
+            <h3>{experience.role}</h3>
+            <p class="meta">
+                {experience.company} · {experience.period}
+            </p>
+            <p class="sub-meta">{experience.modality}</p>
+        </header>
+
+        <ul class="experience-list">
+            {experience.responsibilities.map(item => (
+                    <li>{item}</li>
+            ))}
+        </ul>
+
+        <ul class="tech-list">
+            {experience.tech.map(t => <li>{t}</li>)}
+        </ul>
+    </article>
+</section>

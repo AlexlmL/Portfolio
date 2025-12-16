@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Hero from '../components/Hero.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import TechStack from '../components/TechStack.astro'
+import Contact from '../components/Contact.astro'
+import Experience from '../components/Experience.astro'
+import Education from '../components/Education.astro'
+import Certifications from '../components/Certifications.astro'
+
+const site = {
+    name: 'Alexander Alberto Cantoral Sedamano',
+    title: 'Full-stack Developer — Software Engineering student',
+    email: 'alexcantsed@hotmail.com',
+    phone: '+51 965 255 438',
+    linkedin: 'https://www.linkedin.com/in/alexander-alberto-cantoral-sedamano-9b756416b/',
+    github: 'https://github.com/AlexlmL'
+}
+const projects = [
+    {
+        title: 'PC Master',
+        year: '2024',
+        course: 'Web Applications',
+        role: 'Frontend & Backend Developer',
+        tech: ['Vue.js', 'C# .NET'],
+        description:
+            'Built a web system using Vue.js and C# .NET. Contributed to dynamic interfaces, quality testing, functional documentation, and DevOps support, improving user experience and product stability.',
+        github: 'https://github.com/SI730-WS51-PC-MASTER'
+    },
+    {
+        title: 'EcoMovil',
+        year: '2025',
+        course: 'Fundamentos de Arquitectura de Software',
+        role: 'Frontend Developer',
+        tech: ['Angular', 'TypeScript'],
+        description:
+            'Development of the frontend using Angular, focused on a solid and well-structured user interface. Participated in technical documentation and achieved one of my best academic deliverables in terms of visual and technical quality.',
+        github: 'https://github.com/1ASI0657-2510-3586-Grupo3-EcoMovil'
+    },
+    {
+        title: 'PlantCare',
+        year: '2025',
+        course: 'IoT Solutions Development',
+        role: 'Full-stack Developer · Team Leader',
+        tech: ['Angular', 'DDD', 'CQRS', 'IoT'],
+        description:
+            'Led and contributed to a smart plant monitoring IoT solution. Developed backend APIs applying DDD/CQRS principles, implemented frontend features, managed backlog organization, and supported agile planning.',
+        github: 'https://github.com/1ASI0572-2520-3443-Grupo2-PlantCare'
+    }
+]
+---
+<BaseLayout title="Alexander Cantoral | Portfolio">
+    <Hero site={site} />
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>
+            Software Engineering student at UPC with a strong interest in back-end and
+            full-stack development. I enjoy building clean, functional interfaces and
+            collaborating on backend solutions.
+        </p>
+        <p>
+            I value transparency in both teamwork and technology. I am especially
+            interested in open-source projects and in building software that promotes
+            free access to knowledge, collaboration, and shared growth within the
+            developer community.
+        </p>
+        <p>
+            I believe software should be understandable, reusable, and accessible,
+            and I aim to apply these principles in both academic and professional
+            projects.
+        </p>
+    </section>
+    <Education />
+    <Experience />
+    <section class="container">
+        <h2>Tech Stack</h2>
+        <TechStack />
+    </section>
+    <Certifications />
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="grid">
+            {projects.map(p => <ProjectCard project={p} />)}
+        </div>
+    </section>
+</BaseLayout>
