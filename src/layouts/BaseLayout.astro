@@ -10,9 +10,12 @@ const { title = 'Portfolio' } = Astro.props
     <title>{title}</title>
 </head>
 <body>
+    <main>
+        <slot />
+    </main>
 
-<main>
-    <slot />
-</main>
+    <footer class="site-footer">
+        <p>Built by Alexander Cantoral. Portfolio updated for 2026.</p>
+    </footer>
 </body>
 </html>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
+import Highlights from '../components/Highlights.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import TechStack from '../components/TechStack.astro'
 import Contact from '../components/Contact.astro'
@@ -11,11 +12,29 @@ import Certifications from '../components/Certifications.astro'
 const site = {
     name: 'Alexander Alberto Cantoral Sedamano',
     title: 'Full-stack Developer — Software Engineering student',
+    description:
+        'I build digital products with clear code, accessible interfaces, and reliable APIs. I enjoy working in agile teams and learning new technologies to solve real problems.',
     email: 'alexcantsed@hotmail.com',
-    phone: '+51 965 255 438',
     linkedin: 'https://www.linkedin.com/in/alexander-alberto-cantoral-sedamano-9b756416b/',
     github: 'https://github.com/AlexlmL'
 }
+const highlights = [
+    {
+        title: 'Full-stack solutions',
+        description:
+            'I design and build complete web applications, integrating modern frontend with robust backend APIs focused on performance and maintainability.'
+    },
+    {
+        title: 'User-centered design',
+        description:
+            'I focus on clean, accessible, and fast experiences that help real users accomplish their goals with confidence.'
+    },
+    {
+        title: 'Collaborative teams',
+        description:
+            'I work with agile methodologies, clear communication, and useful documentation so teams can move forward together.'
+    }
+]
 const projects = [
     {
         title: 'PC Master',
@@ -54,22 +73,16 @@ const projects = [
     <section id="about" class="container">
         <h2>About Me</h2>
         <p>
-            Software Engineering student at UPC with a strong interest in back-end and
-            full-stack development. I enjoy building clean, functional interfaces and
-            collaborating on backend solutions.
+            I am a Software Engineering student and full-stack developer with experience in
+            academic and professional projects. I specialize in building scalable applications
+            with maintainable code and intuitive experiences.
         </p>
         <p>
-            I value transparency in both teamwork and technology. I am especially
-            interested in open-source projects and in building software that promotes
-            free access to knowledge, collaboration, and shared growth within the
-            developer community.
-        </p>
-        <p>
-            I believe software should be understandable, reusable, and accessible,
-            and I aim to apply these principles in both academic and professional
-            projects.
+            My focus combines backend best practices, clean user interfaces, and effective team communication.
+            I aim to add value from architecture design to deployment.
         </p>
     </section>
+    <Highlights highlights={highlights} />
     <Education />
     <Experience />
     <section class="container">
@@ -83,4 +96,5 @@ const projects = [
             {projects.map(p => <ProjectCard project={p} />)}
         </div>
     </section>
+    <Contact site={site} />
 </BaseLayout>

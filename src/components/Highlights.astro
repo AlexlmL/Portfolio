@@ -1,0 +1,14 @@
+---
+const { highlights } = Astro.props
+---
+<section id="highlights" class="container highlights">
+    <h2>Highlights</h2>
+    <div class="highlight-grid">
+        {highlights.map(item => (
+            <article class="highlight-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+            </article>
+        ))}
+    </div>
+</section>
